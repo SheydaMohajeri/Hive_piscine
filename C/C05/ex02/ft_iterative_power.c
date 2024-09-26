@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smohajer <smohajer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:43:36 by smohajer          #+#    #+#             */
-/*   Updated: 2024/09/23 16:39:47 by smohajer         ###   ########.fr       */
+/*   Created: 2024/09/20 11:10:14 by smohajer          #+#    #+#             */
+/*   Updated: 2024/09/24 08:59:20 by smohajer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_iterative_power(int nb, int power)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	while (str[length] != '\0')
+	i = 1;
+	if (nb == 0 && power == 0)
+		return (1);
+	if (power < 0)
+		return (0);
+	while (power > 0)
 	{
-		length++;
+		i *= nb;
+		power--;
 	}
-	return (length);
+	return (i);
 }
 
-#include <stdio.h>
-
+/*#include<stdio.h>
 int main(void)
 {
-	char	str[] = "asnnkk";
-	int	length = ft_strlen(str);
-	printf("length:%d\n", length);
-	return(0);
-}
-
+printf("%i\n", ft_iterative_power(2,4));
+printf("%i\n", ft_iterative_power(0,0));
+printf("%i\n", ft_iterative_power(1,-1));
+printf("%i\n", ft_iterative_power(-1,1));
+printf("%i\n", ft_iterative_power(0,1));
+return(0);
+}*/

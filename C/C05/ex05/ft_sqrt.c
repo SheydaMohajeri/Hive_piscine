@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smohajer <smohajer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:43:36 by smohajer          #+#    #+#             */
-/*   Updated: 2024/09/23 16:39:47 by smohajer         ###   ########.fr       */
+/*   Created: 2024/09/20 11:10:14 by smohajer          #+#    #+#             */
+/*   Updated: 2024/09/24 09:50:16 by smohajer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_sqrt(int nb)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	while (str[length] != '\0')
+	i = 1;
+	if (nb < 0)
+		return (0);
+	while (i * i <= nb && i <= 46340)
 	{
-		length++;
+		if (i * i == nb)
+			return (i);
+		i++;
 	}
-	return (length);
+	return (0);
 }
-
-#include <stdio.h>
-
+/*#include<stdio.h>
 int main(void)
 {
-	char	str[] = "asnnkk";
-	int	length = ft_strlen(str);
-	printf("length:%d\n", length);
-	return(0);
-}
-
+int nb1 = 0;
+int nb2 = 1;
+int nb3 = -1;
+int nb4 = 25;
+int nb5 = 46340;
+printf("%d\n", ft_sqrt(nb1));
+printf("%d\n", ft_sqrt(nb2));
+printf("%d\n", ft_sqrt(nb3));
+printf("%d\n", ft_sqrt(nb4));
+printf("%d\n", ft_sqrt(nb5));
+return 0;
+}*/

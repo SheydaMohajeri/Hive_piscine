@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smohajer <smohajer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:43:36 by smohajer          #+#    #+#             */
-/*   Updated: 2024/09/23 16:39:47 by smohajer         ###   ########.fr       */
+/*   Created: 2024/09/20 11:10:14 by smohajer          #+#    #+#             */
+/*   Updated: 2024/09/25 16:08:41 by smohajer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	length;
+#include<unistd.h> 
 
-	length = 0;
-	while (str[length] != '\0')
+int	main(int argc, char **argv)
+{
+	int	i;
+
+	i = 0;
+	if (argc > 0)
 	{
-		length++;
+		while (argv[0][i])
+		{
+			write (1, &argv[0][i], 1);
+			i++;
+		}
+		write (1, "\n", 1);
 	}
-	return (length);
 }
-
-#include <stdio.h>
-
-int main(void)
-{
-	char	str[] = "asnnkk";
-	int	length = ft_strlen(str);
-	printf("length:%d\n", length);
-	return(0);
-}
-

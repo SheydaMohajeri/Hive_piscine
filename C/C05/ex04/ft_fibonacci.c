@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smohajer <smohajer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:43:36 by smohajer          #+#    #+#             */
-/*   Updated: 2024/09/23 16:39:47 by smohajer         ###   ########.fr       */
+/*   Created: 2024/09/20 11:10:14 by smohajer          #+#    #+#             */
+/*   Updated: 2024/09/24 11:09:15 by smohajer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	length;
+#include<stdio.h>
 
-	length = 0;
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	return (length);
+int	ft_fibonacci(int index)
+{
+	if (index < 0)
+		return (-1);
+	else if (index == 0)
+		return (0);
+	else if (index == 1)
+		return (1);
+	else
+		return (ft_fibonacci (index - 1) + ft_fibonacci (index - 2));
 }
 
-#include <stdio.h>
-
-int main(void)
+/*int main(void)
 {
-	char	str[] = "asnnkk";
-	int	length = ft_strlen(str);
-	printf("length:%d\n", length);
+	printf("%d\n", ft_fibonacci(10));
 	return(0);
-}
-
+}*/

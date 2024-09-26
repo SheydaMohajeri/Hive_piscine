@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smohajer <smohajer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:43:36 by smohajer          #+#    #+#             */
-/*   Updated: 2024/09/23 16:39:47 by smohajer         ###   ########.fr       */
+/*   Created: 2024/09/21 12:49:24 by smohajer          #+#    #+#             */
+/*   Updated: 2024/09/24 08:57:05 by smohajer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	length;
-
-	length = 0;
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	return (length);
-}
-
 #include <stdio.h>
 
-int main(void)
+int	ft_recursive_factorial(int nb)
 {
-	char	str[] = "asnnkk";
-	int	length = ft_strlen(str);
-	printf("length:%d\n", length);
-	return(0);
+	if (nb < 0)
+		return (0);
+	if (nb == 0)
+		return (1);
+	else
+		nb = nb * ft_recursive_factorial(nb - 1);
+	return (nb);
 }
 
+/*int	main(void)
+{
+	printf ("%i\n", ft_recursive_factorial(5));
+	printf ("%i\n", ft_recursive_factorial(-2));
+	printf ("%i\n", ft_recursive_factorial(0));
+	printf ("%i\n", ft_recursive_factorial(1));
+	return (0);
+}*/

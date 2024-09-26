@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smohajer <smohajer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:43:36 by smohajer          #+#    #+#             */
-/*   Updated: 2024/09/23 16:39:47 by smohajer         ###   ########.fr       */
+/*   Created: 2024/09/21 12:50:30 by smohajer          #+#    #+#             */
+/*   Updated: 2024/09/24 08:55:47 by smohajer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_iterative_factorial(int nb)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	while (str[length] != '\0')
+	i = nb;
+	if (nb < 0)
+		return (0);
+	if (nb == 0)
+		return (1);
+	while (i > 1)
 	{
-		length++;
+		nb = nb * (i - 1);
+		i--;
 	}
-	return (length);
+	return (nb);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char	str[] = "asnnkk";
-	int	length = ft_strlen(str);
-	printf("length:%d\n", length);
-	return(0);
-}
-
+	printf ("%i\n", ft_iterative_factorial(0));
+	printf ("%i\n", ft_iterative_factorial(-1));
+	printf ("%i\n", ft_iterative_factorial(5));
+	printf ("%i\n", ft_iterative_factorial(1));
+	return (0);
+}*/

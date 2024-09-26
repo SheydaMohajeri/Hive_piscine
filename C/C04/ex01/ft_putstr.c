@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smohajer <smohajer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:43:36 by smohajer          #+#    #+#             */
-/*   Updated: 2024/09/23 16:39:47 by smohajer         ###   ########.fr       */
+/*   Created: 2024/09/20 11:10:14 by smohajer          #+#    #+#             */
+/*   Updated: 2024/09/22 11:36:57 by smohajer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include<unistd.h>
+
+void	ft_putstr(char *str)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	while (str[length] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		length++;
+		write(1, &str[i], 1);
+		i++;
 	}
-	return (length);
 }
-
-#include <stdio.h>
-
+/*
 int main(void)
 {
-	char	str[] = "asnnkk";
-	int	length = ft_strlen(str);
-	printf("length:%d\n", length);
+	char st[] = "hvhvgvv";
+	ft_putstr(st);
 	return(0);
 }
-
+*/
